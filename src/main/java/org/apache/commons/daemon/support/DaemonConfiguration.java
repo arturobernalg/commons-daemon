@@ -111,14 +111,14 @@ public final class DaemonConfiguration
     private String expandProperty(final String propValue)
         throws ParseException
     {
-        final StringBuffer expanded;
+        final StringBuilder expanded;
         int btoken;
         int ctoken = 0;
 
         if (propValue == null) {
             return null;
         }
-        expanded = new StringBuffer();
+        expanded = new StringBuilder();
         btoken   = propValue.indexOf(BTOKEN);
         while (btoken != -1) {
             if (btoken > 0 && propValue.charAt(btoken - 1) == BTOKEN.charAt(0)) {
@@ -192,7 +192,7 @@ public final class DaemonConfiguration
     public String[] getPropertyArray(final String name)
         throws ParseException
     {
-        final ArrayList<String> list = new ArrayList<String>();
+        final ArrayList<String> list = new ArrayList<>();
         String    args;
 
         // Load daemon.arg[0] ... daemon.arg[n] into the String array.
